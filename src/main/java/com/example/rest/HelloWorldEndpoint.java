@@ -17,7 +17,7 @@ public class HelloWorldEndpoint {
   @GET
   @Path("/hello")
   @Produces("text/plain")
-  public Response get(){
+  public Response hello(){
     return Response.ok("Hello from Heroku!").build();
   }
 }
