@@ -1,7 +1,6 @@
 {
-  "name": "Wildfly Swarm JAX-RS Example",
+  "name": "Wildfly Swarm for Android Demo",
   "description": "An example app running JBoss Wildfly Swarm using JAX-RS.",
   "website": "http://wildfly-swarm.io/",
-  "addons": [],
   "success_url": "/"
 }

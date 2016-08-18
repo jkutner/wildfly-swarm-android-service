@@ -13,4 +13,11 @@ public class HelloWorldEndpoint {
   public Response get() {
     return Response.ok("Hello from WildFly Swarm!").build();
   }
+
+  @GET
+  @Path("/hello")
+  @Produces("text/plain")
+  public Person get(){
+    return Response.ok("Hello from Heroku!").build();
+  }
 }
