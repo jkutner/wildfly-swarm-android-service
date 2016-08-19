@@ -2,5 +2,6 @@
   "name": "Wildfly Swarm for Android Demo",
   "description": "An example app running JBoss Wildfly Swarm using JAX-RS.",
   "website": "http://wildfly-swarm.io/",
-  "success_url": "/"
+  "success_url": "/",
+  "addons": [ "heroku-postgresql" ]
 }

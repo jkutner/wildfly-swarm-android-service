@@ -1,38 +1,36 @@
 package com.example.models;
 
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@Entity
+@Table(name = "REST_DB_ACCESS")
+@NamedQueries({
+    @NamedQuery(name = "Person.findAll", query = "SELECT e FROM Person e"),
+    @NamedQuery(name = "Person.find", query = "SELECT e FROM Person e WHERE isbn = :isbn")
+})
+@XmlRootElement
 public class Person {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int id;
 
-  private String firstName = "";
+  @Column(length = 40)
+  private String isbn;
 
-  private String lastName = "";
-
-  private String job;
-
-  public String getFirstName() {
-    return firstName;
+  public Integer getId() {
+    return id;
   }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setId(Integer i) {
+    id = i;
   }
 
-  public String getLastName() {
-    return lastName;
+  public String getIsbn() {
+    return isbn;
   }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getJob() {
-    return job;
-  }
-
-  public void setJob(String job) {
-    this.job = job;
-  }
-
-  public String toString() {
-    return firstName + " " + lastName;
+  public void setIsbn(String s) {
+    this.isbn = s;
   }
 }
