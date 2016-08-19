@@ -1,6 +1,6 @@
 package com.example.rest;
 
-import com.example.models.Person;
+import com.example.models.Book;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.wildfly.swarm.container.Container;
@@ -34,9 +34,9 @@ public class RestApplication {
     container.start();
 
     JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class);
-    deployment.addClasses(Person.class);
+    deployment.addClasses(Book.class);
     deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/persistence.xml", RestApplication.class.getClassLoader()), "classes/META-INF/persistence.xml");
-    deployment.addResource(com.example.rest.PersonEndpoint.class);
+    deployment.addResource(BookEndpoint.class);
     deployment.addResource(com.example.rest.HelloWorldEndpoint.class);
     deployment.addAllDependencies();
 
